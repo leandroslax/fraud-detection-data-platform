@@ -1,0 +1,25 @@
+               ┌─────────────────────────────────────────────────┐
+               │                 Fontes de Dados                 │
+               │                                                 │
+               │ API  |  CSV  | PostgreSQL  |  MongoDB           │
+               └───────────────┬───────────────┬────────────────┘
+                               │               │
+                   (Airflow + Python Operators)
+                               ▼
+        ┌──────────────────────────────────────────────────────────┐
+        │                      AWS S3 Data Lake                    │
+        │  fraud-detection-lake                                   │
+        │  Bronze ▸ Silver ▸ Gold  (Medallion Architecture)       │
+        └──────────────────────────┬──────────────────────────────┘
+                                   │
+                               Databricks
+                            (Spark / PySpark)
+                                   │
+                                   ▼
+                           Transformações dbt
+                                   │
+                                   ▼
+                     Snowflake (como Warehouse analítico)
+                                   │
+                                   ▼
+                      Dashboards (Power BI ou Tableau)
