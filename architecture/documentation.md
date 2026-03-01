@@ -1,1 +1,0 @@
-# Documentação da Arquitetura

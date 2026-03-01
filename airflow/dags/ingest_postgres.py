@@ -1,1 +1,0 @@
-# DAG ingestão PostgreSQL
